@@ -1,0 +1,35 @@
+    html, body
+    {
+        height: 100%;
+        margin: 0px;
+        color: #000000;
+        font-family: Arial, Helvetica, sans-serif;
+	font-size: 9pt;
+	line-height: 10pt;
+/*	overflow-y: none; */
+    }
+
+    table.a
+    {
+	height: 100%;
+	width: 100%;
+	line-height: 10pt;
+    }
+
+    table.brd
+    {
+	border: 1px double green;
+    }
+
+    td.brd1
+    {
+	border: 4px double red;
+    }
+
+    font.smallbold
+    {
+	font-family: sans-serif;
+	font-size: 8pt;
+	font-weight: bold; 
+    }
+    
