@@ -1,9 +1,12 @@
 #summary One-sentence summary of this page.
 
-= Introduction =
+= Описание проекта =
 
-Add your content here.
+*Megacli-fe* представляет собой web приложение, предназначенное для мониторинга и управления 
+RAID контроллерами фирмы *LSI* и *INTEL*(построенных на чипах LSI). Для своей работы megacli-fe
+использует консольную утилиту *MegaCLI* (проект тестировался на версии 8.00.48), которую можно скачать на сайте *http://www.lsi.com *.
 
+= Скриншоты =
 
 [http://lh3.googleusercontent.com/-7mJjsPE5hVQ/UFbw71kxUMI/AAAAAAAAACM/MwFvX0Vhsv4/s985/megacli-fe-screenshot1.png]
 
