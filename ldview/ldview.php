@@ -87,8 +87,16 @@ function ld($controller, $ldisk) //по одному диску
     printTR( $name, GetStrValue($outarray, $name), BGCOLOR, "#000000");
     $name = "Current Cache Policy";
     printTR( $name, GetStrValue($outarray, $name), BGCOLOR, "#000000");
-    $name = "Access Policy";
-    printTR( $name, GetStrValue($outarray, $name), BGCOLOR, "#000000");
+
+    $name = "Current Access Policy"; //для версии 8.04.07
+    $value = GetStrValue($outarray, $name);
+    if ($value=="")
+    {
+	$name = "Access Policy"; //для версии 8.00.48
+	$value = GetStrValue($outarray, $name);
+    }
+    printTR( $name, $value, BGCOLOR, "#000000");
+
     $name = "Disk Cache Policy";
     printTR( $name, GetStrValue($outarray, $name), BGCOLOR, "#000000");
     echo "<tr bgcolor=\"".BGCOLOR."\"><td colspan=\"2\"><HR></td></tr>\n";
