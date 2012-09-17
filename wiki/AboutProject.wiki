@@ -12,9 +12,3 @@ RAID контроллерами фирмы *LSI* и *INTEL*(построенны
 
 
 http://lh5.googleusercontent.com/-YnZwlWNaKuo/UFbw133P9XI/AAAAAAAAACA/YAOqDiKPGYY/s985/megacli-fe-screenshot2.png
-= Details =
-
-Add your content here.  Format your content with:
-  * Text in *bold* or _italic_
-  * Headings, paragraphs, and lists
-  * Automatic links to other wiki pages
