@@ -154,6 +154,7 @@ function onControllerSelect()
     {
 	case 1:
 	    $url="eventlog/eventlog.php?selectedcontroller=$selectedcontroller";
+	    $url2="eventlog/eventlogtopmenu.php?selectedcontroller=$selectedcontroller&selectedbutton=1";
 	break;
 	case 2:
 	    $url="settings.php?selectedcontroller=$selectedcontroller";
