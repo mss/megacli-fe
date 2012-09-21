@@ -8,6 +8,7 @@ class TEvent
     var $seqnum;
     var $time;
     var $code;
+    var $class;
     var $desc; //Event Description
     function Print2TR() //выводит эвент в виде строки таблицы
     {
@@ -19,16 +20,18 @@ class TEvent
 	printf("%X",$this->seqnum);
 	printf("</a>");
 	printf("</td>");
-		//если код соотв ошибке то выделяем
-	if ( ($this->code & 0xF0) == 0x70)
+	//класс события
+	if ($this->class != "0")
+	{
 	    $bg = "#ffb0b0";
-	if ( ($this->code & 0xF0) == 0xF0)
-	    $bg = "#ffffb0";
-
+	}
+	printf("<td width=\"50px\" bgcolor=\"$bg\" align=\"center\" >");
+	printf("%s",$this->class);
+	printf("</td>");
+        $bg = $bgcolor;
 	printf("<td width=\"50px\" bgcolor=\"$bg\" align=\"center\" >");
 	printf("%X",$this->code);
 	printf("</td>");
-	    $bg = $bgcolor;
 	printf("<td width=\"100px\" bgcolor=\"$bg\">");
 	printf("%s",$this->time);
 	printf("</td>");
@@ -81,6 +84,7 @@ function GetNextEventPos( $textarray, &$index )
     if ( $event->time == "" )
 	$event->time = "boot + " . GetStrValue($ev, "Seconds since last reboot") . " s";
     $event->code = GetHexValue($ev, "Code:");
+    $event->class = GetStrValue($ev, "Class");
     return ($event);
 }
 
