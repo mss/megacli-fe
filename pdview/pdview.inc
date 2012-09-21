@@ -206,7 +206,7 @@ function printButtons($controller, $encl, $slot, $diskid, $state)
     $disarray["SMART"]["Unconfigured(bad)"]          = "";
     $disarray["CLEAR"]["Unconfigured(bad)"]          = "disabled";
     $disarray["REBUILD"]["Unconfigured(bad)"]        = "disabled";
-    $disarray["MAKEGOOD"]["Unconfigured(bad)"]       = "disabled";
+    $disarray["MAKEGOOD"]["Unconfigured(bad)"]       = "";
     $disarray["REPLACEMISSING"]["Unconfigured(bad)"] = "disabled";
 
     //для Unconfigured(good), Spun Up
