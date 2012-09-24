@@ -101,7 +101,7 @@ function ParseEventLog( $filename)
 	    $evarray[] = $event;
     }
     while ( $event != false );
-    return ( $evarray );
+    return ( array_reverse($evarray) );
 }
 
 
