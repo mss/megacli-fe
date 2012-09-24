@@ -83,8 +83,8 @@ function main2crc32($simulate) //возвращает контрольную с�
     }
     while ( $driveinfo != false );
 
-//    if (!$simulate)
-//	printstringarray($sumarray);
+    //if (!$simulate)
+    //	printstringarray($sumarray);
     //считаем контрольную сумму текста $sumarray
     $s = implode( "|" , $sumarray ); //масив в строку
     global $crc32sum;
@@ -158,9 +158,8 @@ function pd($outarray, $outarray2, $outarray3, $outarray4, $detailview) //по �
 
     $name = "Operation In Progress";
     $value = GetStrValue($outarray2, $name);
-    if ( $value != "")
+    if ( ($value != "") && ($value != "Consistency Check") ) //подпорка от ложного появления "Consistency Check"
 	printTR( $name, $value, "#FFFF00", "#000000");
-
 
     if ( (is_array($outarray3)) && (count($outarray3) > 0) )   //для Clear
 	printTR( "", $outarray3[0], "#FFFF00", "#FF0000");
