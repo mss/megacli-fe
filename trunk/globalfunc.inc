@@ -37,6 +37,29 @@ function MegaCliError($rawarray)
     printf("</table></b>");
 }
 
+function GetMegaCliVerStr() //возвращает версию MegaCli в виде строки
+{
+    global $MEGACLI;
+    $cmd = $MEGACLI." -v -NoLog";
+    exec($cmd, $outarray, $errcode);
+    if ($errcode != 0)
+    {
+	MegaCliError($outarray);
+	return ("");
+    }
+
+    for ($i=0; $i < count($outarray); $i++)
+    {
+	list($s1,$s2) = sscanf($outarray[$i], "%s %s");
+	if ($s1 == "Ver")
+	{
+	    //echo "[".$s1."] [".$s2."]<br>";
+	    return ($s2);
+	}
+    }
+    return ("");
+}
+
 //-------------------------работа с файлом конфигурации---------------------------
 
 function ReadConfigFile()
