@@ -47,13 +47,12 @@ function main()
 
     printf("<tr bgcolor=\"#00FF00\" align=\"center\"><td>\n");
     printf("<font color=\"#FFFFFF\"><b>\n");
-    printf("Adapter info\n");
+    printf("Controller info\n");
     printf("</b></font>\n");
     printf("</td></tr>\n");
 
     printf("<tr bgcolor=\"#FFFFAA\"><td>\n");
     printf("<font color=\"#000000\"><b>\n");
-    printf("Adapter info\n");
     printstringarray($outarray);
     printf("</b></font>\n");
     printf("</td></tr>\n");
