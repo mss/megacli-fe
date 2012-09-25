@@ -37,7 +37,10 @@
 
     printf("<br>MegaCli Binary Full Path: <input type=\"text\" id=\"megaclipath\" value=\" %s \" onChange=\"onChangeCfg()\"<br>",$MEGACLI);
     if (file_exists($MEGACLI))
-	printf("<font color=\"#00FF00\"><b>OK</b></font><br>\n");
+    {
+	printf("<font color=\"#00FF00\"><b>OK</b></font>\n");
+	printf(" v%s<br>\n",GetMegaCliVerStr());
+    }
     else
 	printf("<font color=\"#FF0000\"><b>Not Found</b></font><br>\n");
     printf("<br>smartctl Binary Full Path: <input type=\"text\" id=\"smartctlpath\" value=\" %s \" onChange=\"onChangeCfg()\"<br>",$SMARTCTL);
