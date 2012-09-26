@@ -38,7 +38,7 @@ class TEvent
 	printf("<td bgcolor=\"$bg\">");
 	printf("%s",$this->desc);
 	printf("</td>");
-	printf("</tr>");
+	printf("</tr>\n");
     }
 }
 

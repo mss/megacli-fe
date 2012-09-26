@@ -1,29 +1,13 @@
 <?php
-include ("../globalfunc.inc");
+    $CSSPATH="..";
+    require '../headerhtml.inc';
+    require '../globalfunc.inc';
 
-define ("BGCOLOR", "#FFFFAA");
-//global $request;
-$request = $_SERVER['QUERY_STRING'];
-$selectedbutton = GetIntFromRequest("selectedbutton");
-
-function main()
-{
-//    echo "TOPMENU<br>\n";
-}
-
+    define ("BGCOLOR", "#FFFFAA");
+    //global $request;
+    $request = $_SERVER['QUERY_STRING'];
+    $selectedbutton = GetIntFromRequest("selectedbutton");
 ?>
-
-<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
-<html>
-<head>
-<title>megacli frontend</title>
-<meta http-equiv="content-type" content="text/html; charset=koi8-r">
-<style type="text/css">
-    @import url("../style.css");
-</style>
-</head>
-
-<body>
 
 <table class="a" width="100%" border="0" cellspacing="0" cellpadding="0"  bordercolor="#0000FF">
 <tr>
@@ -57,14 +41,6 @@ echo "<td id=\"".$name."\" onClick=\"onMouseClick('".$name."');\"  onMouseOver=\
 </td>
 </tr>
 </table>
-
-<?php
-
-
-
-
-main();
-?>
 
 <SCRIPT language="JavaScript">
 <?php

@@ -1,7 +1,10 @@
 <?php
-include ("pdview.inc");
+    $CSSPATH="..";
+    require '../headerhtml.inc';
+    require 'pdview.inc';
 
-$crc32sum = 0;
+    $crc32sum = 0;
+    main();
 
 function main()
 {
@@ -13,17 +16,6 @@ function main()
     echo "</form>";
 }
 
-?>
-
-<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
-<html>
-<head>
-<title>megacli frontend</title>
-<meta http-equiv="content-type" content="text/html; charset=koi8-r">
-</head>
-
-<?php
-main()
 ?>
 
 </body>

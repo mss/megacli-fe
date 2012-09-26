@@ -1,11 +1,16 @@
 <?php
-//include ("../globalfunc.inc");
-include ("pdview.inc");
+    $CSSPATH="..";
+    require '../headerhtml.inc';
+    require 'pdview.inc';
 
-$selectedcontroller = GetIntFromRequest("selectedcontroller");
+    $selectedcontroller = GetIntFromRequest("selectedcontroller");
 
-define ("BGCOLOR", "#FFFFAA");
-$crc32sum = 0; //контрольная сумма текста
+    define ("BGCOLOR", "#FFFFAA");
+    $crc32sum = 0; //контрольная сумма текста
+    
+    $url="pdviewiframe.php?selectedcontroller=" . $selectedcontroller . "&detailview=" . GetIntFromRequest("detailview");
+    echo "    <iframe src=\"$url\" name=\"pdviewiframe\" height=\"1px\" width=\"1px\" frameborder=\"0\"> </iframe>";
+    main();
 
 
 function main()
@@ -103,58 +108,28 @@ function missingdisktable()
     echo "<br>\n";
 }
 
-?>
 
-
-
-<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
-<html>
-<head>
-<title>megacli frontend</title>
-<meta http-equiv="content-type" content="text/html; charset=koi8-r">
-<style type="text/css">
-    @import url("../style.css");
-</style>
-</head>
-
-<body>
-
-<?php
-
-$url="pdviewiframe.php?selectedcontroller=" . $selectedcontroller . "&detailview=" . GetIntFromRequest("detailview");
-;
-echo "    <iframe src=\"$url\" name=\"pdviewiframe\" height=\"1px\" width=\"1px\" frameborder=\"0\"> </iframe>";
-
-main();
 ?>
 
 
 <SCRIPT language="JavaScript">
 
-
-<?php
-    echo "var crc32sum=$crc32sum;\n";
-    echo "setTimeout(\"smartupdate(\\\"pdview.php?selectedcontroller=". $selectedcontroller . "&detailview=" . GetIntFromRequest("detailview") . "\\\")\",30000);";
-?>
-
+    var crc32sum=<?php echo $crc32sum; ?>;
+    setTimeout("smartupdate(\"pdview.php?selectedcontroller=<?php echo $selectedcontroller . "&detailview=" . GetIntFromRequest("detailview"); ?>\")",30000);
 
 function smartupdate(requeststring)
 {
     //перезагружаем только iframe
-    <?php
-    echo "this.pdviewiframe.location.href = \"pdviewiframe.php?selectedcontroller=" . $selectedcontroller . "&detailview=" . GetIntFromRequest("detailview") . "\";";
-    ?>
+    this.pdviewiframe.location.href =" <?php echo "pdviewiframe.php?selectedcontroller=" . $selectedcontroller . "&detailview=" . GetIntFromRequest("detailview"); ?>";
     //перезагружаем всю страницу суммы не совпали
     var remotecrs32 = this.pdviewiframe.document.forms[0].mydata.value;
     if ( (crc32sum  != 0) && (crc32sum != remotecrs32) )
     {
-//	alert(requeststring + "  " + remotecrs32);
+	//alert(requeststring + "  " + remotecrs32);
 	this.location.href = requeststring;
     }
     else
-	<?php
-	echo "setTimeout(\"smartupdate(\\\"pdview.php?selectedcontroller=". $selectedcontroller . "&detailview=" . GetIntFromRequest("detailview") . "\\\")\",30000);\n";
-	?>
+	setTimeout("smartupdate(\"pdview.php?selectedcontroller=<?php echo $selectedcontroller . "&detailview=" . GetIntFromRequest("detailview"); ?>\")",30000);
 }
 
 

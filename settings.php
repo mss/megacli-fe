@@ -1,32 +1,7 @@
-<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
-<html>
-<head>
-<title>megacli frontend</title>
-<meta http-equiv="content-type" content="text/html; charset=koi8-r">
-<style type="text/css">
-    @import url("style.css");
-</style>
-</head>
-
-<body>
-
-
-
-<SCRIPT language="JavaScript">
-
-function onChangeAlarmMode(controller, mode) //вызывается при клике на радиобаттоне
-{
-	var  s = "settings.php?selectedcontroller=" + controller + "&setalarmmode=" + mode;
-	this.location.href= s;
-}
-
-</SCRIPT>
-
-
-
 <?php
 
-include ("globalfunc.inc");
+    require 'headerhtml.inc';
+    require 'globalfunc.inc';
 
 $selectedcontroller=GetIntFromRequest("selectedcontroller");
 $setalarmmode=GetIntFromRequest("setalarmmode"); //если моду менять не нужно то 0
@@ -131,6 +106,18 @@ printf("<input type=\"radio\" onChange=\"onChangeAlarmMode($selectedcontroller, 
 </tr>
 </table>
 </p>
+
+<SCRIPT language="JavaScript">
+
+function onChangeAlarmMode(controller, mode) //вызывается при клике на радиобаттоне
+{
+	var  s = "settings.php?selectedcontroller=" + controller + "&setalarmmode=" + mode;
+	this.location.href= s;
+}
+
+</SCRIPT>
+
+
 </body>
 </html>
 
