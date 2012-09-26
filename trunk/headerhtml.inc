@@ -2,7 +2,7 @@
 <html>
 <head>
 <title>megacli frontend</title>
-<meta http-equiv="content-type" content="text/html; charset=koi8-r">
+<meta http-equiv="content-type" content="text/html; charset=UTF-8">
 <?php echo $METAOPT; ?>
 <style type="text/css">
     @import url("<?php echo $CSSPATH."/"; ?>style.css");
