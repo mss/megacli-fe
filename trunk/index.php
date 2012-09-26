@@ -17,23 +17,8 @@
  *  along with this program.  If not, see <http://www.gnu.org/licenses/>.
  **************************************************************************
 */
-?>
-
-<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
-<html>
-<head>
-<title>megacli frontend</title>
-<meta http-equiv="content-type" content="text/html; charset=koi8-r">
-<style type="text/css">
-    @import url("style.css");
-</style>
-</head>
-
-<body>
-
-
-<?php
-    include ("globalfunc.inc");
+    require 'headerhtml.inc'; 
+    require 'globalfunc.inc';
     global $selectedmode;
     global $selectedcontroller;
 

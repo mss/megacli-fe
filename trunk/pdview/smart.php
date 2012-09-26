@@ -1,7 +1,10 @@
 <?php
+    $CSSPATH="..";
+    require '../headerhtml.inc';
+    require '../globalfunc.inc';
+    global $selectedcontroller;
 
-include ("../globalfunc.inc");
-global $selectedcontroller;
+    main();
 
 
 function main()
@@ -44,23 +47,6 @@ function main()
     printf("</div>");
 };
 
-?>
-
-
-<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
-<html>
-<head>
-<title>megacli frontend</title>
-<meta http-equiv="content-type" content="text/html; charset=koi8-r">
-<style type="text/css">
-    @import url("../style.css");
-</style>
-</head>
-
-<body>
-
-<?php
-main();
 ?>
 
 </body>

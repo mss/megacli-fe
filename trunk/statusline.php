@@ -1,7 +1,10 @@
 <?php
-include ("globalfunc.inc");
+    require 'globalfunc.inc';
+    $METAOPT = "<meta http-equiv=\"REFRESH\" content=\"30;url=statusline.php?selectedcontroller=".GetIntFromRequest("selectedcontroller")." \" >\n";
+    $BODYOPT = " style=\"margin:0px;font-size:8pt;font-family:sans-serif;\"";
+    require 'headerhtml.inc';
 
-$crc32sum = 0;
+    $crc32sum = 0;
 
 function getSummary($controller)
 {
@@ -56,19 +59,6 @@ function main()
     }
 }
 
-?>
-
-<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
-<html>
-<head>
-<title>megacli frontend</title>
-<meta http-equiv="content-type" content="text/html; charset=koi8-r">
-<?php
-echo "<meta http-equiv=\"REFRESH\" content=\"30;url=statusline.php?selectedcontroller=".GetIntFromRequest("selectedcontroller")."\"> ";
-?>
-</head>
-<body style="margin:0px;font-size:8pt;font-family: sans-serif;">
-<?php
 main()
 ?>
 
