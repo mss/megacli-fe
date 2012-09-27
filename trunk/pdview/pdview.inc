@@ -308,12 +308,12 @@ function printmissingtable( $diskarray, $passive)
     $row=GetIntFromRequest("row");
 
     printf("<br><br><div align=\"center\">");
-    printf("<table width=\"95%%\" border=\"0\" cellspacing=\"0\" cellpadding=\"1\" bgcolor=\"#008800\" >");
+    printf("<table width=\"95%%\" border=\"0\" cellspacing=\"0\" cellpadding=\"1\" bgcolor=\"#008800\" >\n");
 
-    printf("<tr><td align=\"center\" colspan=\"4\">");
+    printf("<tr><td align=\"center\" colspan=\"4\">\n");
     printf("<font color=\"#FFFFFF\"><b>");
     printf("List Of Missing Drives");
-    printf("</font></td></tr>");
+    printf("</font></td></tr>\n");
 
     printf("<tr bgcolor=\"#FFFFAA\">");
 
@@ -334,11 +334,11 @@ function printmissingtable( $diskarray, $passive)
     printf("<font color=\"#0000FF\"><b>");
     printf("Expected Size");
     printf("</font></td>");
-    printf("</tr>");
+    printf("</tr>\n");
 
     for ( $i = 0; $i < count($diskarray); $i++ )
     {
-	printf("<tr bgcolor=\"#FFFFAA\">");
+	printf("<tr bgcolor=\"#FFFFAA\">\n");
 
 	printf("<td align=\"center\" width=\"50px\" >");
 	printf("<font color=\"#000000\"><b>");
@@ -346,28 +346,28 @@ function printmissingtable( $diskarray, $passive)
 	if ( $i == $checkedno )
 	    $checked = "checked";
 	if ( $passive == false )
-	    printf("<input type=\"radio\" \"" . $checked . "\" onChange=\"onSelectMissingDrive($selectedcontroller, $encl, $slot," . $diskarray[$i]->array . "," . $diskarray[$i]->row . "," . $i . ")\" >");
+	    printf("<input type=\"radio\" " . $checked . " onChange=\"onSelectMissingDrive($selectedcontroller, $encl, $slot," . $diskarray[$i]->array . "," . $diskarray[$i]->row . "," . $i . ")\" >");
 
 	printf("</font>");
-	printf("</td>");
+	printf("</td>\n");
 
 	printf("<td align=\"center\" width=\"50px\">");
 	printf("<font color=\"#000000\"><b>");
 	echo $diskarray[$i]->array;
 	printf("</font>");
-	printf("</td>");
+	printf("</td>\n");
 
 	printf("<td align=\"center\" width=\"50px\">");
 	printf("<font color=\"#000000\"><b>");
 	echo $diskarray[$i]->row;
 	printf("</font>");
-	printf("</td>");
+	printf("</td>\n");
 
 	printf("<td>");
 	printf("<font color=\"#000000\"><b>");
 	echo $diskarray[$i]->size . " " . $diskarray[$i]->sizestr;
 	printf("</font>");
-	printf("</td>");
+	printf("</td>\n");
 /*
 	printf("<td>");
 	printf("<font color=\"#FFFF00\"><b>");
@@ -375,7 +375,7 @@ function printmissingtable( $diskarray, $passive)
 	printf("</font>");
 	printf("</td>");
 */
-	printf("</tr>");
+	printf("</tr>\n");
     }
 
     if ( $passive == false )
