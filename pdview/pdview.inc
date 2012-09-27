@@ -344,7 +344,10 @@ function printmissingtable( $diskarray, $passive)
 	printf("<font color=\"#000000\"><b>");
 	$checked="";
 	if ( $i == $checkedno )
+	{
 	    $checked = "checked";
+	    $checkedno = $i; //костыль - $checkedno может быть неинициализированным
+	}
 	if ( $passive == false )
 	    printf("<input type=\"radio\" " . $checked . " onChange=\"onSelectMissingDrive($selectedcontroller, $encl, $slot," . $diskarray[$i]->array . "," . $diskarray[$i]->row . "," . $i . ")\" >");
 
@@ -385,7 +388,7 @@ function printmissingtable( $diskarray, $passive)
 
 	echo "<form action=\"replacemissing.php\">\n";
 	echo "<br>";
-	echo "<button value=\"XXX\" name=\"opbutton\" id=\"opbutton\" type=\"button\" onClick=\"javascript:onButton($selectedcontroller, $encl, $slot, $array, $row)\" >\n";
+	echo "<button value=\"XXX\" name=\"opbutton\" id=\"opbutton\" type=\"button\" onClick=\"javascript:onButton($selectedcontroller, $encl, $slot, ".$diskarray[$checkedno]->array.",".$diskarray[$checkedno]->row.")\" >\n";
 	echo " Replace Disk </button>\n";
 	echo "</form><br></td>\n";
 	echo "</tr>\n";
